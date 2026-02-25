@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import pandas as pd
 import os
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
         print("🎉 Pipeline otomatisasi berhasil dieksekusi!")
     except Exception as e:
         print(f"❌ Terjadi kesalahan: {e}")
-=======
+
 import pandas as pd
 import os
 
@@ -110,4 +110,4 @@ if __name__ == "__main__":
         print("🎉 Pipeline otomatisasi berhasil dieksekusi!")
     except Exception as e:
         print(f"❌ Terjadi kesalahan: {e}")
->>>>>>> f363770c053cc00794ac2ed4ca49f7ebc0087512
+
