@@ -44,3 +44,8 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(model, "random_forest_model")
     
     print(f"Model berhasil dilatih! RMSE: {rmse:.2f}, R2: {r2:.2f}")
+
+import joblib
+# Menyimpan model ke folder Dashboard agar bisa dipakai Streamlit
+joblib.dump(model, '../Dashboard/bike_model.joblib')
+print("Model berhasil disimpan ke folder Dashboard!")

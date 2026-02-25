@@ -1,8 +1,11 @@
+from fastapi import requests
 import streamlit as st
 import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
+import prometheus_client
+import requests
 
 # 1. Judul Aplikasi
 st.title("🚲 Prediksi Penyewaan Sepeda (Bike Sharing)")
@@ -40,6 +43,10 @@ input_df = user_input_features()
 # 4. Tampilkan Prediksi
 st.subheader("Hasil Prediksi")
 prediction = model.predict(input_df)
+try:
+    requests.get(f"http://localhost:8001/update?value={int(prediction[0])}")
+except:
+    pass
 st.metric(label="Estimasi Jumlah Penyewa", value=int(prediction[0]))
 
 # 5. Visualisasi Sederhana (Opsional tapi bagus untuk nilai tambahan)
