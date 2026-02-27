@@ -1,15 +1,14 @@
-# Gunakan image Python dasar
 FROM python:3.10-slim
-
-# Set folder kerja di dalam kontainer
 WORKDIR /app
 
-# Salin file requirements dan instal library
+# Salin requirements dari folder utama
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Salin semua kode proyek ke dalam kontainer
-COPY . .
+# SALIN file modelling.py DARI folder Membangun_model KE folder kerja /app
+COPY Membangun_model/modelling.py .
 
-# Perintah untuk menjalankan aplikasi (sesuaikan jika perlu)
+# Salin folder data agar bisa dibaca oleh script
+COPY data_preprocessing/ ./data_preprocessing/
+
 CMD ["python", "modelling.py"]

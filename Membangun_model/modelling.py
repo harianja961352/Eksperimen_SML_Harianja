@@ -14,7 +14,7 @@ mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 mlflow.set_experiment("Eksperimen_Bike_Sharing_Harianja")
 
 # 2. LOAD DATA
-df = pd.read_csv('hour_cleaned.csv')
+df = pd.read_csv('data_preprocessing/hour_cleaned.csv')
 X = df.drop(columns=['cnt'])
 y = df['cnt']
 
