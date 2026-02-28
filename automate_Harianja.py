@@ -41,7 +41,7 @@ def save_data(df, output_path):
     print(f"Data bersih berhasil disimpan di {output_path}")
 
 if __name__ == "__main__":
-    # Tentukan path file input dan output sesuai struktur folder GitHub kamu
+    # Tentukan path file input dan output sesuai struktur folder GitHub
     INPUT_PATH = "data_raw/hour.csv"
     OUTPUT_PATH = "data_preprocessing/hour_cleaned.csv"
     
